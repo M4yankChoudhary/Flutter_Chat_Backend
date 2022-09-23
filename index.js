@@ -68,10 +68,14 @@ io.on("connection", async (socket) => {
   });
   
   socket.on("login", async(data) => {
- 
     socket.join(data.room)
     io.emit("user-join", data);
-    await Room.updateOne({roomId : data.room},{ $push: {'usersList': socket.id}})
+    try {
+      await Room.updateOne({_id : data.room},{ $push: {'usersList': socket.id}})
+    } catch(e) {
+      console.log(e)
+    }
+  
     console.log(data);
   });
   console.log(connectedUser);
