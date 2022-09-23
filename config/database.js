@@ -5,7 +5,7 @@ import mongoose from 'mongoose';
 const connectDB = async () => {
     try {
         await mongoose.connect(
-            "mongodb+srv://mayank:EhdZQ6AmBk2NYP5A@forgo.pthnexi.mongodb.net/flutter-chat",
+            "mongodb+srv://mayank:EhdZQ6AmBk2NYP5A@forgo.pthnexi.mongodb.net/flutter-chat2",
             // "mongodb://localhost:27017/api",
              {
                 useUnifiedTopology: true,

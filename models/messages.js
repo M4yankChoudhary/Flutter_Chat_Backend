@@ -13,6 +13,12 @@ const messagesSchema = new Mongoose.Schema({
   sentByMe: {
     type: String,
     require: true
+  },
+  sender: {
+    type: String,
+  },
+  time: {
+    type: String,
   }
 }
 ,
