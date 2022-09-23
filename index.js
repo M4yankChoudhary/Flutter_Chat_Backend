@@ -69,8 +69,8 @@ io.on("connection", async (socket) => {
   
   socket.on("login", async(data) => {
  
-    await socket.join(data.room)
-    socket.in(data.room).emit("user-join", data);
+    socket.join(data.room)
+    io.emit("user-join", data);
     await Room.updateOne({roomId : data.room},{ $push: {'usersList': socket.id}})
     console.log(data);
   });
